@@ -14,7 +14,7 @@ data = gpd.read_file('OSMData/lines.shp')
 
 indonesia_coastlines = data.cx[95:141, -11:6].copy()
 
-tolerance = 0.0015  
+tolerance = 0.01  
 indonesia_coastlines.geometry = indonesia_coastlines.geometry.simplify(tolerance, preserve_topology=True)
 
 coords = indonesia_coastlines.geometry.apply(lambda geom: list(geom.coords))
